@@ -1,9 +1,9 @@
 {
-  "name": "angular-seed-advanced",
+  "name": "angular-seed-advanced-spikes",
   "main": "app.js",
   "version": "0.0.0",
   "nativescript": {
-    "id": "com.yourdomain.appname",
+    "id": "com.mutuatech.AngularSeedAdvancedSpikes",
     "tns-ios": {
       "version": "2.4.0"
     },
