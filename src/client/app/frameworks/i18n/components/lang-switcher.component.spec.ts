@@ -18,6 +18,7 @@ const SUPPORTED_LANGUAGES: Array<ILang> = [
   { code: 'es', title: 'Spanish' },
   { code: 'fr', title: 'French' },
   { code: 'ru', title: 'Russian' },
+  { code: 'pt', title: 'Portuguese' },
   { code: 'bg', title: 'Bulgarian' }
 ];
 
@@ -68,12 +69,13 @@ export function main() {
               let fixture = TestBed.createComponent(TestComponent);
               fixture.detectChanges();
               let appDOMEl = fixture.debugElement.children[0].nativeElement;
-              t.e(appDOMEl.querySelectorAll('form > select option').length).toBe(5);
+              t.e(appDOMEl.querySelectorAll('form > select option').length).toBe(6);
               t.e(appDOMEl.querySelectorAll('form > select option')[0].value).toBe('en');
               t.e(appDOMEl.querySelectorAll('form > select option')[1].value).toBe('es');
               t.e(appDOMEl.querySelectorAll('form > select option')[2].value).toBe('fr');
               t.e(appDOMEl.querySelectorAll('form > select option')[3].value).toBe('ru');
-              t.e(appDOMEl.querySelectorAll('form > select option')[4].value).toBe('bg');
+              t.e(appDOMEl.querySelectorAll('form > select option')[4].value).toBe('pt');
+              t.e(appDOMEl.querySelectorAll('form > select option')[5].value).toBe('bg');
             });
         }));
     });
