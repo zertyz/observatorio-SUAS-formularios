@@ -14,6 +14,7 @@ import { TranslateLoader } from 'ng2-translate';
 import { AppComponent } from './app/components/app.component';
 import { HomeComponent } from './app/components/home/home.component';
 import { AboutComponent } from './app/components/about/about.component';
+import { GvHomeComponent }         from './app/components/pages/gv-home/gv-home.component';
 import { routes } from './app/components/app.routes';
 
 // feature modules
@@ -81,7 +82,8 @@ export function cons() {
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    GvHomeComponent,
   ],
   providers: [
     {

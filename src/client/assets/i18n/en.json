@@ -7,5 +7,55 @@
   "ABOUT_REWARD": "For reward, here is a list of awesome computer scientists:",
   "INPUT_HINT": "Enter a new computer scientist...",
   "ADD_BTN_TEXT": "Add",
-  "SUCCESS_MSG": "Your deployment of Angular Seed Advanced worked perfectly."
+  "SUCCESS_MSG": "Your deployment of Angular Seed Advanced worked perfectly.",
+
+  "APP_NAME": "Garçom Virtual",
+
+  "GV_HOME_TITLE": "Boas vindas",
+  "GV_HOME_INFO" : "Tela com o logo destacado do restaurante e uma imagem de fundo, com o logo do serviço, com menos destaque.\n\n→ Clique para continuar (vai para a tela 'Abertura de Conta / Cadastro Individual')\n\n→ 60 segundos de inatividade, em qualquer tela, retornam a esta tela (com um clique, volta-se à tela em que se estava antes)",
+  "GV_HOME_START": "Clique here to enter",
+
+  "GV_NOVA_CONTA_TITLE": "Abertura de Conta / Cadastro Individual",
+  "GV_NOVA_CONTA_INFO" : "Tela com texto informando que, caso se deseje separar a conta, individualizando os pedidos, esta é a hora de entrar com os nomes dos membros da mesa – embora novos membros possam ser adicionados posteriormente.\n\n→ Botão \"Incluir Membro da Mesa\". Pede NOME e \"Exigir Senha?\". A senha não será inserida neste momento. Ao concluir, a lista com membros cadastrados é atualizada.\n→ Lista com membros cadastrados, clicável. Edita o nome do membro e o checkbox \"Exigir Senha?\", ou deleta o registro. Quando está vazia, a lista exibe o texto sombreado \"Grupo\" ou \"Mesa\".\n→ Botão de continuar / abertura de conta. Com o texto \"Abrir conta para a mesa\" ou \"Abrir conta individualizada para a mesa\". Leva para a tela de menu",
+  "GV_NOVA_CONTA_NEXT" : "Menu",
+
+  "GV_MENU_TITLE": "Menu",
+  "GV_MENU_INFO" : "Tela com o cardápio do restaurante, respeitando sua identidade visual.\n\n→ Ao se clicar em cada um dos itens, pergunta-se a quantidade; Ao se clicar novamente, altera-se a quantidade. Itens que foram selecionados aparecem com um destaque identificável. A edição de quantidades é feita através da tela 'Edição de quantidades e membros'.\n→ No canto superior do menu, há o botão \"Pedir os X itens!\". Enquanto não se faz os pedidos, este botão aparece desabilitado.\n→ Ao lado, há o botão \"Pedidos Realizados\". Exibe os pedidos no mesmo formato da tela 'Efetiva pedidos'\n→ Há também o botão \"Conta parcial\", descrito na tela 'Conta Parcial'.",
+  "GV_MENU_NEXT" : "Confirmação dos pedidos",
+
+  "GV_CONFIRMA_PEDIDOS_TITLE": "Confirmação dos pedidos",
+  "GV_CONFIRMA_PEDIDOS_INFO" : "Esta tela lista os itens (e suas quantidades) selecionados na tela anterior, para confirmação. Também possibilita atribuí-los a membros da mesa e criar novos membros.\n\n→ Botão no topo esquerdo: \"Menu\", p/ voltar ao menu \n→ Botão no topo direito:  \"Efetivar pedido!\" (ver tela 'Efetivar Pedidos'). \n→ Lista com itens, quantidades e, se for o caso, membros da mesa, clicáveis para edição (ver tela 'Edicao de Quantidades e Membros').",
+  "GV_CONFIRMA_PEDIDOS_NEXT" : "Edição de quantidades e membros",
+
+  "GV_EDICAO_TITLE": "Edição de quantidades e membros",
+  "GV_EDICAO_INFO" : "Tela apresentando o item clicado, a quantidade total entrada (alterável) e os eventuais membros que fizeram o pedido (com as quantidades atribuídas a cada um). Inicialmente, o item não está atribuído a nenhum membro e o texto \"X Chopps foram pedidos. De quem são?\"\n\n→ Botão indicar Membro. Clicando-se, seleciona-se o membro e a quantidade destinada a ele. Nesta mesma seleção, é possível incluir um novo membro (que talvez tenha juntado-se à mesa recentemente – o que é feito similar ao processo da tela 'Abertura de Conta / Cadastro Individual').\n→ Questionamento: esse botão de indicar membro ficará disponível para cada item escolhido no menu?",
+  "GV_EDICAO_NEXT" : "Efetiva Pedidos",
+
+  "GV_EFETIVA_PEDIDOS_TITLE": "Efetiva pedidos",
+  "GV_EFETIVA_PEDIDOS_INFO" : "Apresenta os pedidos, quantidades e membros. Não editável. Exige senha dos membros que indicaram a necessidade de cadastrar senha.\n\n→ Botão \"Efetivar\"\n→ Botão \"Voltar\"",
+  "GV_EFETIVA_PEDIDOS_NEXT" : "Conta Parcial",
+
+  "GV_CONTA_PARCIAL_TITLE": "Conta Parcial",
+  "GV_CONTA_PARCIAL_INFO" : "Dependendo do tipo de conta, a tela 'Conta Parcial para Contabilidade Individual' será exibida ou a tela 'Conta Parcial para a Mesa'. Para ambas, há o botão \"Resgatar cupom de desconto\", onde entra-se o número de quaisquer vouchers ou pincodes concedidos pelo restaurante ou bar via outros meios.",
+  "GV_CONTA_PARCIAL_NEXT1" : "Conta Parcial para Contabilidade Individual",
+  "GV_CONTA_PARCIAL_NEXT2" : "Conta Parcial para a Mesa",
+
+  "GV_CONTA_PARCIAL_INDIVIDUAL_TITLE": "Conta Parcial para Contabilidade Individual",
+  "GV_CONTA_PARCIAL_INDIVIDUAL_INFO" : "Esta tela exibe a lista de membros e o total parcial dos pedidos realizados, em R$, para cada um. Ao se clicar em cada um deles, aparecem o detalhamento dos itens, tal qual a tela 'Conta Parcial para a mesa'.\n\n→ Botão \"Fechar conta deste membro\", atendido pela tela 'Escolha da forma de pagamento'.\n→ Incluir botão de pergunta \"Incluir taxa de serviço?\" – Sim ou Não \"check box\"",
+  "GV_CONTA_PARCIAL_INDIVIDUAL_NEXT" : "Escolha da forma de pagamento",
+
+  "GV_CONTA_PARCIAL_MESA_TITLE": "Conta Parcial para a mesa",
+  "GV_CONTA_PARCIAL_MESA_INFO" : "Lista o detalhamento dos itens.\n\n→ Botão \"Pedir o fechamento da conta\", levando à tela 'Escolha da forma de pagamento'.",
+  "GV_CONTA_PARCIAL_MESA_NEXT" : "Escolha da forma de pagamento",
+
+  "GV_FORMA_DE_PAGAMENTO_TITLE": "Escolha da forma de pagamento",
+  "GV_FORMA_DE_PAGAMENTO_INFO" : "Por exemplo, dinheiro, cartão Visa, Master Card, Sodexo, etc.\n\nObs: Ao clicar “forma de pagamento” deverá haver comunicação com o tablet que será o de gestão das mesas, para que uma pessoa da equipe do estabelecimento vá à mesa efetivar o pagamento.\n\nObs 2: Incluir botão “deseja responder pesquisa de satisafação?”",
+  "GV_FORMA_DE_PAGAMENTO_NEXT" : "Pesquisa de Satisfação",
+
+  "GV_PESQUISA_SATISFACAO_TITLE": "Pesquisa de Satisfação",
+  "GV_PESQUISA_SATISFACAO_INFO" : "→ “Escala de satisfação”: check box de 0 a 10\n→ “Deseja deixar comentário?” check box “sim” ou “não” – abrir campo de preenchimento com quantidade de 250 caracteres.",
+  "GV_PESQUISA_SATISFACAO_NEXT" : "Início",
+
+  "JSON_SUCKS": "for not allowing the last element to have a comma... for not allowing comments... for requiring indexes to be quoted..."
+
 }

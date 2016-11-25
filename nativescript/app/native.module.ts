@@ -19,6 +19,7 @@ import { WindowService, ConsoleService, RouterExtensions } from './app/framework
 import { NSAppComponent } from './pages/app/app.component';
 import { AboutComponent } from './app/components/about/about.component';
 import { HomeComponent } from './app/components/home/home.component';
+import { GvHomeComponent }         from './app/components/pages/gv-home/gv-home.component';
 import { routes } from './app/components/app.routes';
 
 // feature modules
@@ -51,7 +52,8 @@ import { NS_ANALYTICS_PROVIDERS } from './shared/nativescript/index';
   ],
   declarations: [
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    GvHomeComponent,
   ],
   exports: [
     NativeScriptModule,
