@@ -1,6 +1,6 @@
 {
-  "name": "angular-seed-advanced",
-  "version": "0.0.0",
+  "name": "angular-seed-advanced-spikes",
+  "version": "0.1.0",
   "description": "High-quality, modular starter (advanced seed) project for Angular 2 apps with statically typed build and AoT + NativeScript + Electron",
   "repository": {
     "url": "https://github.com/NathanWalker/angular-seed-advanced"
@@ -161,6 +161,8 @@
     "minimatch": "^3.0.3"
   },
   "dependencies": {
+    "bootstrap": "^4.0.0-alpha.5",
+    "ng2-bootstrap": "^1.1.16",
     "@angular/common": "~2.2.0",
     "@angular/compiler": "~2.2.0",
     "@angular/core": "~2.2.0",

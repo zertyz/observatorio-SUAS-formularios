@@ -8,6 +8,8 @@ import { SeedAdvancedConfig } from './seed-advanced.config';
  */
 export class ProjectConfig extends SeedAdvancedConfig {
 
+  public ELECTRON_DEPENDENCIES_SRC: Array<string> = [];   // depends on code added to tools/tasks/project/desktop.libs.ts
+
   PROJECT_TASKS_DIR = join(process.cwd(), this.TOOLS_DIR, 'tasks', 'project');
 
   constructor() {
@@ -20,6 +22,7 @@ export class ProjectConfig extends SeedAdvancedConfig {
     // Add `NPM` third-party libraries to be injected/bundled.
     this.NPM_DEPENDENCIES = [
       ...this.NPM_DEPENDENCIES,
+      {src: 'bootstrap/dist/css/bootstrap.css'/*bootstrap.min.css ? maybe not because they will get minified when build for production*/, inject: true},
       // {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
     ];
 
@@ -57,6 +60,20 @@ export class ProjectConfig extends SeedAdvancedConfig {
 
     /* Add to or override NPM module configurations: */
     // this.mergeObject(this.PLUGIN_CONFIGS['browser-sync'], { ghostMode: false });
+
+    // additional packages as instructed in the comments above don't currently work
+
+    // ng2-bootstrap (with moment)
+    this.SYSTEM_BUILDER_CONFIG.packages['moment'] = {main: 'moment.js', defaultExtension : 'js'};
+    this.SYSTEM_BUILDER_CONFIG.paths   ['moment'] = `${this.APP_BASE}node_modules/ng2-bootstrap/node_modules/moment/moment.js`;
+    this.SYSTEM_CONFIG_DEV    .paths   ['moment'] = `${this.APP_BASE}node_modules/ng2-bootstrap/node_modules/moment/moment.js`;
+    this.SYSTEM_CONFIG        .paths   ['moment'] = `${this.APP_BASE}node_modules/ng2-bootstrap/node_modules/moment/moment.js`;
+    this.SYSTEM_BUILDER_CONFIG.packages['ng2-bootstrap/ng2-bootstrap'] = {main: 'ng2-bootstrap.js', defaultExtension : 'js'};
+    this.SYSTEM_BUILDER_CONFIG.paths   ['ng2-bootstrap/ng2-bootstrap'] = `${this.APP_BASE}node_modules/ng2-bootstrap/ng2-bootstrap.js`;
+    this.SYSTEM_CONFIG_DEV    .paths   ['ng2-bootstrap/ng2-bootstrap'] = `${this.APP_BASE}node_modules/ng2-bootstrap/ng2-bootstrap.js`;
+    this.SYSTEM_CONFIG        .paths   ['ng2-bootstrap/ng2-bootstrap'] = `${this.APP_BASE}node_modules/ng2-bootstrap/ng2-bootstrap.js`;
+    this.ELECTRON_DEPENDENCIES_SRC.push('node_modules/ng2-bootstrap/**/*');
+
   }
 
 }

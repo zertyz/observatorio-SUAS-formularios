@@ -22,12 +22,39 @@ export class GvHomeComponent {
     }
   }
 
+  public alerts: Array<IAlert> = [];
+  private backup: Array<IAlert>;
+
   constructor(private injector: Injector, public routerext: RouterExtensions) {
-    // This is here as an example
-    // if (this.page) {
-    //   this.page.actionBarHidden = true;
-    // }
+    this.alerts.push({
+      id: 1,
+      type: 'success',
+      message: 'This is an success alert',
+    }, {
+      id: 2,
+      type: 'info',
+      message: 'This is an info alert',
+    }, {
+      id: 3,
+      type: 'warning',
+      message: 'This is a warning alert',
+    }, {
+      id: 4,
+      type: 'danger',
+      message: 'This is a danger alert',
+    });
+    this.backup = this.alerts.map((alert: IAlert) => alert);
   }
+
+  public closeAlert(alert: IAlert) {
+    const index: number = this.alerts.indexOf(alert);
+    this.alerts.splice(index, 1);
+  }
+
+  public reset() {
+    this.alerts = this.backup.map((alert: IAlert) => alert);
+  }
+
 
   gotoStart() {
     this.routerext.navigate(['/about'], {
@@ -37,4 +64,11 @@ export class GvHomeComponent {
       }
     });
   }
+}
+
+
+interface IAlert {
+  id: number;
+  type: string;
+  message: string;
 }

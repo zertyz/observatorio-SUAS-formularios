@@ -6,6 +6,13 @@
   {{'GV_HOME_INFO' | translate}}
 </p>
 
+<p *ngFor="let alert of alerts">
+  <alert [type]="alert.type" dismissible="true" (close)="closeAlert(alert)">{{ alert.message }}</alert>
+</p>
+<p>
+  <button type="button" class="btn btn-primary" (click)="reset()">Reset</button>
+</p>
+
 <p>
   <a class="link" (click)="gotoStart()">{{'GV_HOME_START' | translate}}</a>
 </p>

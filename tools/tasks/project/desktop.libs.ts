@@ -15,6 +15,8 @@ export = () => {
 
   src.push(...Config.NPM_DEPENDENCIES.map(x => relative(Config.PROJECT_ROOT, x.src)));
 
+  src = src.concat(Config.ELECTRON_DEPENDENCIES_SRC);   // code to allow 'src' to be extended by tools/config/project.config.ts
+
   return gulp.src(src, { base: 'node_modules' })
     .pipe(newer({
       dest: join(Config.APP_DEST + '/node_modules'),

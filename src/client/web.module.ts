@@ -10,6 +10,9 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { TranslateLoader } from 'ng2-translate';
 
+// bootstrap
+import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
+
 // app
 import { AppComponent } from './app/components/app.component';
 import { HomeComponent } from './app/components/home/home.component';
@@ -59,6 +62,7 @@ export function cons() {
 
 @NgModule({
   imports: [
+    Ng2BootstrapModule,
     BrowserModule,
     CoreModule.forRoot([
       { provide: WindowService, useFactory: (win) },
