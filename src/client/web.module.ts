@@ -8,25 +8,24 @@ import { Http } from '@angular/http';
 // libs
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { TranslateLoader } from 'ng2-translate';
 
 // bootstrap
 import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 // app
-import { AppComponent } from './app/components/app.component';
-import { HomeComponent } from './app/components/home/home.component';
-import { AboutComponent } from './app/components/about/about.component';
-import { GvHomeComponent }         from './app/components/pages/gv-home/gv-home.component';
+import { APP_COMPONENTS, AppComponent } from './app/components/index';
 import { routes } from './app/components/app.routes';
 
 // feature modules
 import { CoreModule } from './app/frameworks/core/core.module';
+import { AppReducer } from './app/frameworks/ngrx/index';
 import { AnalyticsModule } from './app/frameworks/analytics/analytics.module';
-import { multilingualReducer, MultilingualEffects } from './app/frameworks/i18n/index';
 import { MultilingualModule, translateFactory } from './app/frameworks/i18n/multilingual.module';
+import { MultilingualEffects } from './app/frameworks/i18n/index';
 import { SampleModule } from './app/frameworks/sample/sample.module';
-import { nameListReducer, NameListEffects } from './app/frameworks/sample/index';
+import { NameListEffects } from './app/frameworks/sample/index';
 
 // config
 import { Config, WindowService, ConsoleService } from './app/frameworks/core/index';
@@ -76,18 +75,13 @@ export function cons() {
       useFactory: (translateFactory)
     }]),
     SampleModule,
-    StoreModule.provideStore({
-      i18n: multilingualReducer,
-      names: nameListReducer
-    }),
+    StoreModule.provideStore(AppReducer),
+    StoreDevtoolsModule.instrumentOnlyWithExtension(),
     EffectsModule.run(MultilingualEffects),
     EffectsModule.run(NameListEffects)
   ],
   declarations: [
-    AppComponent,
-    HomeComponent,
-    AboutComponent,
-    GvHomeComponent,
+    APP_COMPONENTS
   ],
   providers: [
     {
