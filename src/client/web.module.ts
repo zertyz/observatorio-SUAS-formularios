@@ -12,7 +12,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { TranslateLoader } from 'ng2-translate';
 
 // bootstrap
-import { Ng2BootstrapModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // app
 import { APP_COMPONENTS, AppComponent } from './app/components/index';
@@ -61,7 +61,7 @@ export function cons() {
 
 @NgModule({
   imports: [
-    Ng2BootstrapModule,
+    NgbModule.forRoot(),
     BrowserModule,
     CoreModule.forRoot([
       { provide: WindowService, useFactory: (win) },

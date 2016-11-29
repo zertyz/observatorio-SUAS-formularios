@@ -1,5 +1,5 @@
 // angular
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
@@ -16,7 +16,8 @@ import { CoreModule } from '../../../frameworks/core/core.module';
 const testModuleConfig = () => {
   TestBed.configureTestingModule({
     imports: [CoreModule, RouterTestingModule, MultilingualModule],
-    declarations: [GvHomeComponent, TestComponent]
+    declarations: [GvHomeComponent, TestComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
   });
 };
 

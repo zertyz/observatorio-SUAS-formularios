@@ -63,16 +63,12 @@ export class ProjectConfig extends SeedAdvancedConfig {
 
     // additional packages as instructed in the comments above don't currently work
 
-    // ng2-bootstrap (with moment)
-    this.SYSTEM_BUILDER_CONFIG.packages['moment'] = {main: 'moment.js', defaultExtension : 'js'};
-    this.SYSTEM_BUILDER_CONFIG.paths   ['moment'] = `${this.APP_BASE}node_modules/ng2-bootstrap/node_modules/moment/moment.js`;
-    this.SYSTEM_CONFIG_DEV    .paths   ['moment'] = `${this.APP_BASE}node_modules/ng2-bootstrap/node_modules/moment/moment.js`;
-    this.SYSTEM_CONFIG        .paths   ['moment'] = `${this.APP_BASE}node_modules/ng2-bootstrap/node_modules/moment/moment.js`;
-    this.SYSTEM_BUILDER_CONFIG.packages['ng2-bootstrap/ng2-bootstrap'] = {main: 'ng2-bootstrap.js', defaultExtension : 'js'};
-    this.SYSTEM_BUILDER_CONFIG.paths   ['ng2-bootstrap/ng2-bootstrap'] = `${this.APP_BASE}node_modules/ng2-bootstrap/ng2-bootstrap.js`;
-    this.SYSTEM_CONFIG_DEV    .paths   ['ng2-bootstrap/ng2-bootstrap'] = `${this.APP_BASE}node_modules/ng2-bootstrap/ng2-bootstrap.js`;
-    this.SYSTEM_CONFIG        .paths   ['ng2-bootstrap/ng2-bootstrap'] = `${this.APP_BASE}node_modules/ng2-bootstrap/ng2-bootstrap.js`;
-    this.ELECTRON_DEPENDENCIES_SRC.push('node_modules/ng2-bootstrap/**/*');
+    // @ng-bootstrap/ng-bootstrap
+    this.SYSTEM_BUILDER_CONFIG.packages['@ng-bootstrap/ng-bootstrap'] = {main: 'ng-bootstrap.js', defaultExtension : 'js'};
+    this.SYSTEM_BUILDER_CONFIG.paths   ['@ng-bootstrap/ng-bootstrap'] = `${this.APP_BASE}node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js`;
+    this.SYSTEM_CONFIG_DEV    .paths   ['@ng-bootstrap/ng-bootstrap'] = `${this.APP_BASE}node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js`;
+    this.SYSTEM_CONFIG        .paths   ['@ng-bootstrap/ng-bootstrap'] = `${this.APP_BASE}node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js`;
+    this.ELECTRON_DEPENDENCIES_SRC.push('node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js');
 
   }
 
