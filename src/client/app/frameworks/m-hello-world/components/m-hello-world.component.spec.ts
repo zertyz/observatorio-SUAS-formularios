@@ -3,26 +3,23 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
-// libs
-import { MultilingualModule } from '../../../frameworks/i18n/multilingual.module';
-
 // app
 import { t } from '../../../frameworks/test/index';
-import { GvHomeComponent } from './gv-home.component';
+import { MHelloWorldComponent } from './m-hello-world.component';
 
 import { CoreModule } from '../../../frameworks/core/core.module';
 
 // test module configuration for each test
 const testModuleConfig = () => {
   TestBed.configureTestingModule({
-    imports: [CoreModule, RouterTestingModule, MultilingualModule],
-    declarations: [GvHomeComponent, TestComponent],
+    imports: [CoreModule, RouterTestingModule],
+    declarations: [MHelloWorldComponent, TestComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
   });
 };
 
 export function main() {
-  t.describe('@Component: GvHomeComponent', () => {
+  t.describe('@Component: MHelloWorldComponent', () => {
 
     t.be(testModuleConfig);
 
@@ -34,7 +31,8 @@ export function main() {
             fixture.detectChanges();
             let aboutDOMEl = fixture.debugElement.children[0].nativeElement;
 
-            t.e(aboutDOMEl.querySelectorAll('h2')[0].textContent).toContain('GV_HOME_TITLE');
+            t.e(aboutDOMEl.querySelectorAll('p')[0].textContent).toContain('hello');
+            t.e(aboutDOMEl.querySelectorAll('p')[0].textContent).toContain('world');
           });
       }));
   });
@@ -42,6 +40,6 @@ export function main() {
 
 @Component({
   selector: 'test-cmp',
-  template: '<gv-home></gv-home>'
+  template: '<m-hello-world></m-hello-world>'
 })
 class TestComponent { }

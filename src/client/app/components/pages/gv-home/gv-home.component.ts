@@ -9,6 +9,9 @@ import { BaseComponent, Config, RouterExtensions } from '../../../frameworks/cor
 })
 export class GvHomeComponent {
 
+  public alerts: Array<IAlert> = [];
+  private backup: Array<IAlert>;
+
   // Just one way you could handle the {N} `ui/page` Page class
   // in a shared component...
   private _page: any;
@@ -22,10 +25,8 @@ export class GvHomeComponent {
     }
   }
 
-  public alerts: Array<IAlert> = [];
-  private backup: Array<IAlert>;
-
   constructor(private injector: Injector, public routerext: RouterExtensions) {
+
     this.alerts.push({
       id: 1,
       type: 'success',

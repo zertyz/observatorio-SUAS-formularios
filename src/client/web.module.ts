@@ -27,6 +27,9 @@ import { MultilingualEffects } from './app/frameworks/i18n/index';
 import { SampleModule } from './app/frameworks/sample/sample.module';
 import { NameListEffects } from './app/frameworks/sample/index';
 
+// app modules
+import { MHelloWorldModule } from './app/frameworks/m-hello-world/m-hello-world.module';
+
 // config
 import { Config, WindowService, ConsoleService } from './app/frameworks/core/index';
 Config.PLATFORM_TARGET = Config.PLATFORMS.WEB;
@@ -61,6 +64,7 @@ export function cons() {
 
 @NgModule({
   imports: [
+    MHelloWorldModule.forRoot(),
     NgbModule.forRoot(),
     BrowserModule,
     CoreModule.forRoot([

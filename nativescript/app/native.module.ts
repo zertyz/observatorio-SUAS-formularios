@@ -31,6 +31,9 @@ import { MultilingualEffects } from './app/frameworks/i18n/index';
 import { SampleModule } from './app/frameworks/sample/sample.module';
 import { NameListEffects } from './app/frameworks/sample/index';
 
+// app modules
+import { MHelloWorldModule } from './app/frameworks/m-hello-world/m-hello-world.module';
+
 // {N} custom app specific
 import { WindowNative } from './shared/core/index';
 import { NS_ANALYTICS_PROVIDERS } from './shared/nativescript/index';
@@ -40,6 +43,7 @@ import { NS_ANALYTICS_PROVIDERS } from './shared/nativescript/index';
 // note: couple ways this could be done, just one option presented here...
 @NgModule({
   imports: [
+    MHelloWorldModule.forRoot(),
     NativeScriptModule,
     NativeScriptFormsModule,
     NativeScriptHttpModule,
