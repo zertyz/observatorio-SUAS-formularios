@@ -1,0 +1,12 @@
+<ActionBar [title]="'APP_NAME' | translate">
+</ActionBar>
+<StackLayout class="container-content">
+  <Label [text]="'GV_HOME_TITLE' | translate" textWrap="true" class="text"></Label>
+  <Label [text]="'GV_HOME_INFO' | translate" textWrap="true"></Label>
+
+  <m-hello-world>?</m-hello-world>
+  <m-hello-world hello="Hi" world="Earth">!!!</m-hello-world>
+  <m-hello-world hello="Hello" world="Mars">!</m-hello-world>
+
+  <Button (tap)="gotoStart()" [text]="'GV_HOME_START' | translate"></Button>
+</StackLayout>

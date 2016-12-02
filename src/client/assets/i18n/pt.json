@@ -1,0 +1,11 @@
+{
+  "HOME": "Início",
+  "ABOUT": "Sobre",
+  "HELLO": "Salve!",
+  "LOVE_TECH": "Eu amo tecnologia!!",
+  "ABOUT_ADD": "Você quer mais? Adicione você mesmo!",
+  "ABOUT_REWARD": "Para recompensa, aqui vai a lista dos incríveis cientistas computacionais:",
+  "INPUT_HINT": "Adicione um novo cientista da computação...",
+  "ADD_BTN_TEXT": "Adicionar",
+  "SUCCESS_MSG": "O seu deployment do Angular 2 Advanced Seed funcionou perfeitamente."
+}
