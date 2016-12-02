@@ -56,9 +56,10 @@ import { NS_ANALYTICS_PROVIDERS } from './shared/nativescript/index';
     SampleModule
   ],
   declarations: [
-    HomeComponent,
-    AboutComponent,
     GvHomeComponent,
+
+    HomeComponent,
+    AboutComponent
   ],
   exports: [
     NativeScriptModule,

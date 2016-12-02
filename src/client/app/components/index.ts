@@ -4,10 +4,11 @@ import { HomeComponent } from './home/home.component';
 import { GvHomeComponent } from './pages/gv-home/gv-home.component';
 
 export const APP_COMPONENTS: any[] = [
+  GvHomeComponent,
+
   AppComponent,
   AboutComponent,
-  HomeComponent,
-  GvHomeComponent,
+  HomeComponent
 ];
 
 export * from './app.component';
