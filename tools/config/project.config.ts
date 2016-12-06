@@ -12,6 +12,9 @@ export class ProjectConfig extends SeedAdvancedConfig {
 
   PROJECT_TASKS_DIR = join(process.cwd(), this.TOOLS_DIR, 'tasks', 'project');
 
+  FONTS_DEST = `${this.APP_DEST}/font-awesome/fonts`;
+  FONTS_SRC = ['node_modules/font-awesome/fonts/**'];
+
   constructor() {
     super();
     this.APP_TITLE = 'angular-seed-advanced-spikes';
@@ -23,6 +26,9 @@ export class ProjectConfig extends SeedAdvancedConfig {
     this.NPM_DEPENDENCIES = [
       ...this.NPM_DEPENDENCIES,
       {src: 'bootstrap/dist/css/bootstrap.css'/*bootstrap.min.css ? maybe not because they will get minified when build for production*/, inject: true},
+      {src: 'primeng/resources/primeng.css',               inject: true},
+      {src: 'primeng/resources/themes/eggplant/theme.css', inject: true},
+      {src: 'font-awesome/css/font-awesome.css',           inject: true},
       // {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
     ];
 
@@ -70,6 +76,13 @@ export class ProjectConfig extends SeedAdvancedConfig {
     this.SYSTEM_CONFIG_DEV    .paths   ['@ng-bootstrap/ng-bootstrap'] = `${this.APP_BASE}node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js`;
     this.SYSTEM_CONFIG        .paths   ['@ng-bootstrap/ng-bootstrap'] = `${this.APP_BASE}node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js`;
     this.ELECTRON_DEPENDENCIES_SRC.push('node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js');
+
+    // primeng
+    this.SYSTEM_BUILDER_CONFIG.packages['primeng'] = {main: 'primeng.js', defaultExtension : 'js'};
+    this.SYSTEM_BUILDER_CONFIG.paths   ['primeng'] = `${this.APP_BASE}node_modules/primeng`;
+    this.SYSTEM_CONFIG_DEV    .paths   ['primeng'] = `${this.APP_BASE}node_modules/primeng`;
+    this.SYSTEM_CONFIG        .paths   ['primeng'] = `${this.APP_BASE}node_modules/primeng`;
+    this.ELECTRON_DEPENDENCIES_SRC.push('node_modules/primeng/primeng.js');
 
   }
 
