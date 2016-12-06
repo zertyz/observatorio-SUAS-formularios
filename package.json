@@ -163,6 +163,8 @@
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.5",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.14",
+    "font-awesome": "^4.7.0",
+    "primeng": "^1.0.1",
 
     "@angular/common": "~2.2.3",
     "@angular/compiler": "~2.2.3",
