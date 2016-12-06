@@ -82,7 +82,7 @@ export class ProjectConfig extends SeedAdvancedConfig {
     this.SYSTEM_BUILDER_CONFIG.paths   ['primeng'] = `${this.APP_BASE}node_modules/primeng`;
     this.SYSTEM_CONFIG_DEV    .paths   ['primeng'] = `${this.APP_BASE}node_modules/primeng`;
     this.SYSTEM_CONFIG        .paths   ['primeng'] = `${this.APP_BASE}node_modules/primeng`;
-    this.ELECTRON_DEPENDENCIES_SRC.push('node_modules/primeng/primeng.js');
+    this.ELECTRON_DEPENDENCIES_SRC.push('node_modules/primeng/**/*');
 
   }
 
