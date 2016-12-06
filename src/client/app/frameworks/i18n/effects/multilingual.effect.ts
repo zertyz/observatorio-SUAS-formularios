@@ -6,6 +6,7 @@ import { Store, Action } from '@ngrx/store';
 import { Effect, Actions } from '@ngrx/effects';
 import { includes, map } from 'lodash';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 // module
 import { MultilingualService } from '../services/multilingual.service';
@@ -19,7 +20,7 @@ export class MultilingualEffects {
     .map(action => {
       let lang = action.payload;
       if (includes(map(MultilingualService.SUPPORTED_LANGUAGES, 'code'), lang)) {
-        let langChangedAction = new multilingual.LangChangedAction(lang); 
+        let langChangedAction = new multilingual.LangChangedAction(lang);
         // track analytics
         this.multilangService.track(langChangedAction.type, { label: langChangedAction.payload });
         // change state
