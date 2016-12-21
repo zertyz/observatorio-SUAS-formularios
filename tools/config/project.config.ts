@@ -27,7 +27,7 @@ export class ProjectConfig extends SeedAdvancedConfig {
       ...this.NPM_DEPENDENCIES,
       {src: 'bootstrap/dist/css/bootstrap.css'/*bootstrap.min.css ? maybe not because they will get minified when build for production*/, inject: true},
       {src: 'primeng/resources/primeng.css',               inject: true},
-      {src: 'primeng/resources/themes/eggplant/theme.css', inject: true},
+      {src: 'primeng/resources/themes/cupertino/theme.css', inject: true},
       {src: 'font-awesome/css/font-awesome.css',           inject: true},
       // {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
     ];
