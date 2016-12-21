@@ -9,6 +9,7 @@ import { Http } from '@angular/http';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { ConfigLoader, ConfigService } from 'ng2-config';
 import { TranslateLoader } from 'ng2-translate';
 
 // bootstrap
@@ -156,7 +157,7 @@ import { APP_COMPONENTS, AppComponent } from './app/components/index';
 import { routes } from './app/components/app.routes';
 
 // feature modules
-import { CoreModule } from './app/frameworks/core/core.module';
+import { CoreModule, configFactory } from './app/frameworks/core/core.module';
 import { AppReducer } from './app/frameworks/ngrx/index';
 import { AnalyticsModule } from './app/frameworks/analytics/analytics.module';
 import { MultilingualModule, translateFactory } from './app/frameworks/i18n/multilingual.module';
@@ -207,7 +208,8 @@ export function cons() {
     BrowserModule,
     CoreModule.forRoot([
       { provide: WindowService, useFactory: (win) },
-      { provide: ConsoleService, useFactory: (cons) }
+      { provide: ConsoleService, useFactory: (cons) },
+      { provide: ConfigLoader, useFactory: (configFactory) }
     ]),
     routerModule,
     AnalyticsModule,
