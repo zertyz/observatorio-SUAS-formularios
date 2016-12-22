@@ -1,9 +1,9 @@
 {
-  "name": "angular-seed-advanced-spikes",
+  "name": "observatorio-SUAS-formularios",
   "main": "app.js",
   "version": "0.1.0",
   "nativescript": {
-    "id": "com.mutuatech.AngularSeedAdvancedSpikes",
+    "id": "br.mp.mprj.ObservatotioSUASFormularios",
     "tns-ios": {
       "version": "2.4.0"
     },

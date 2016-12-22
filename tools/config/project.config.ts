@@ -17,7 +17,7 @@ export class ProjectConfig extends SeedAdvancedConfig {
 
   constructor() {
     super();
-    this.APP_TITLE = 'angular-seed-advanced-spikes';
+    this.APP_TITLE = 'Observatório SUAS (formulários)';
 
     /* Enable typeless compiler runs (faster) between typed compiler runs. */
     // this.TYPED_COMPILE_INTERVAL = 5;
