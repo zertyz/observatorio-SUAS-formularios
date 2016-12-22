@@ -2,18 +2,47 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { BaseRequestOptions, Http, Response, ResponseOptions } from '@angular/http';
+import { MockBackend, MockConnection } from '@angular/http/testing';
+
+// lib
+import { ConfigService } from 'ng2-config';
 
 // app
-import { t } from '../../../frameworks/test/index';
+import { t } from '../../test/index';
+import { ILang, WindowService, ConsoleService } from '../../core/index';
+import { CoreModule } from '../../core/core.module';
+import { TEST_CORE_PROVIDERS } from '../../core/testing/index';
+
+// mocks
+import { ConfigMock } from '../../core/testing/mocks/ng2-config.mock';
+
+// modules & components
 import { MHelloWorldComponent } from './m-hello-world.component';
 
-import { CoreModule } from '../../../frameworks/core/core.module';
 
 // test module configuration for each test
 const testModuleConfig = () => {
   TestBed.configureTestingModule({
-    imports: [CoreModule, RouterTestingModule],
+    imports: [
+      CoreModule.forRoot([
+        { provide: WindowService, useValue: window },
+        { provide: ConsoleService, useValue: console },
+        { provide: ConfigService, useClass: ConfigMock },
+      ]),
+      RouterTestingModule],
     declarations: [MHelloWorldComponent, TestComponent],
+    providers: [
+      {
+        provide: Http,
+        useFactory: (mockBackend: MockBackend, options: BaseRequestOptions) => {
+          return new Http(mockBackend, options);
+        },
+        deps: [MockBackend, BaseRequestOptions]
+      },
+      MockBackend,
+      BaseRequestOptions
+    ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
   });
 };

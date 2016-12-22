@@ -26,9 +26,9 @@ export class ProjectConfig extends SeedAdvancedConfig {
     this.NPM_DEPENDENCIES = [
       ...this.NPM_DEPENDENCIES,
       {src: 'bootstrap/dist/css/bootstrap.css'/*bootstrap.min.css ? maybe not because they will get minified when build for production*/, inject: true},
-      {src: 'primeng/resources/primeng.css',               inject: true},
-      {src: 'primeng/resources/themes/eggplant/theme.css', inject: true},
-      {src: 'font-awesome/css/font-awesome.css',           inject: true},
+      {src: 'primeng/resources/primeng.css',                inject: true},
+      {src: 'primeng/resources/themes/cupertino/theme.css', inject: true},
+      {src: 'font-awesome/css/font-awesome.css',            inject: true},
       // {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
     ];
 
@@ -39,36 +39,21 @@ export class ProjectConfig extends SeedAdvancedConfig {
       // {src: `${this.CSS_SRC}/path-to-lib/test-lib.css`, inject: true, vendor: false},
     ];
 
-    // Add packages (e.g. lodash)
-    // lodash is already added with the advanced seed - here for example only
+    // Add packages (e.g. ng2-translate)
+    // ng2-translate is already added with the advanced seed - here for example only
     // let additionalPackages: ExtendPackages[] = [{
-    //   name: 'lodash',
-    //   path: `${this.APP_BASE}node_modules/lodash/lodash.js`,
-    //   packageMeta: {
-    //     main: 'index.js',
-    //     defaultExtension: 'js'
-    //   }
+    //   name: 'ng2-translate',
+    //   // Path to the package's bundle
+    //   path: 'node_modules/ng2-translate/bundles/ng2-translate.umd.js'
     // }];
-    //
-    // or
-    //
-    // let additionalPackages: ExtendPackages[] = [];
-    //
-    // additionalPackages.push({
-    //   name: 'lodash',
-    //   path: `${this.APP_BASE}node_modules/lodash/lodash.js`,
-    //   packageMeta: {
-    //     main: 'index.js',
-    //     defaultExtension: 'js'
-    //   }
-    // });
     //
     // this.addPackagesBundles(additionalPackages);
 
     /* Add to or override NPM module configurations: */
     // this.mergeObject(this.PLUGIN_CONFIGS['browser-sync'], { ghostMode: false });
 
-    // additional packages as instructed in the comments above don't currently work
+    // additional packages as instructed in the previous comments above used to not work
+    // but now should be retested since the comment has changed
 
     // @ng-bootstrap/ng-bootstrap
     this.SYSTEM_BUILDER_CONFIG.packages['@ng-bootstrap/ng-bootstrap'] = {main: 'ng-bootstrap.js', defaultExtension : 'js'};

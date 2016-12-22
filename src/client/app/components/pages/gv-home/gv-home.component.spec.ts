@@ -5,17 +5,30 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 // libs
 import { MultilingualModule } from '../../../frameworks/i18n/multilingual.module';
+import { ConfigService } from 'ng2-config';
 
 // app
 import { t } from '../../../frameworks/test/index';
-import { GvHomeComponent } from './gv-home.component';
-
+import { ILang, WindowService, ConsoleService } from '../../../frameworks/core/index';
 import { CoreModule } from '../../../frameworks/core/core.module';
+
+// mocks
+import { ConfigMock } from '../../../frameworks/core/testing/mocks/ng2-config.mock';
+
+// modules & components
+import { GvHomeComponent } from './gv-home.component';
 
 // test module configuration for each test
 const testModuleConfig = () => {
   TestBed.configureTestingModule({
-    imports: [CoreModule, RouterTestingModule, MultilingualModule],
+    imports: [
+      CoreModule.forRoot([
+        { provide: WindowService, useValue: window },
+        { provide: ConsoleService, useValue: console },
+        { provide: ConfigService, useClass: ConfigMock },
+      ]),
+      RouterTestingModule,
+      MultilingualModule],
     declarations: [GvHomeComponent, TestComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
   });
