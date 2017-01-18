@@ -10,7 +10,6 @@ import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
-import { ConfigLoader, ConfigService } from 'ng2-config';
 
 // app
 import { WindowService, ConsoleService, RouterExtensions } from './app/frameworks/core/index';
@@ -21,7 +20,7 @@ import { GvHomeComponent }         from './app/components/pages/gv-home/gv-home.
 import { routes } from './app/components/app.routes';
 
 // feature modules
-import { CoreModule, configFactory } from './app/frameworks/core/core.module';
+import { CoreModule } from './app/frameworks/core/core.module';
 import { AppReducer } from './app/frameworks/ngrx/index';
 import { AnalyticsModule } from './app/frameworks/analytics/analytics.module';
 import { MultilingualModule, translateFactory } from './app/frameworks/i18n/multilingual.module';
@@ -79,8 +78,7 @@ export function cons() {
   imports: [
     CoreModule.forRoot([
       { provide: WindowService, useClass: WindowNative },
-      { provide: ConsoleService, useFactory: (cons) },
-      { provide: ConfigLoader, useFactory: (configFactory) }
+      { provide: ConsoleService, useFactory: (cons) }
     ]),
     AnalyticsModule,
     ComponentsModule,
