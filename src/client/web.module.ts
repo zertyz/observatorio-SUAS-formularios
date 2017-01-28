@@ -11,6 +11,12 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { TranslateLoader } from 'ng2-translate';
 
+// angular-seed-advanced-spikes
+///////////////////////////////
+
+// angular-seed-advanced-spikes app modules
+import { MHelloWorldModule } from './app/shared/modules/m-hello-world/m-hello-world.module';
+
 // bootstrap
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -164,9 +170,6 @@ import { MultilingualEffects } from './app/shared/i18n/index';
 import { SampleModule } from './app/shared/sample/sample.module';
 import { NameListEffects } from './app/shared/sample/index';
 
-// app modules
-import { MHelloWorldModule } from './app/shared/modules/m-hello-world/m-hello-world.module';
-
 // config
 import { Config, WindowService, ConsoleService } from './app/shared/core/index';
 Config.PLATFORM_TARGET = Config.PLATFORMS.WEB;
@@ -201,9 +204,12 @@ export function cons() {
 
 @NgModule({
   imports: [
+
+    // angular-seed-advanced-spikes
     MHelloWorldModule.forRoot(),
     ...PRIMENG_MODULES,
     NgbModule.forRoot(),
+
     BrowserModule,
     CoreModule.forRoot([
       { provide: WindowService, useFactory: (win) },

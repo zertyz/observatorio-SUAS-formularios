@@ -17,8 +17,12 @@ import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-tra
 import { AppComponent } from './app/components/app.component';
 import { AboutComponent } from './app/components/about/about.component';
 import { HomeComponent } from './app/components/home/home.component';
-import { GvHomeComponent }         from './app/components/pages/gv-home/gv-home.component';
 import { routes } from './app/components/app.routes';
+
+// angular-seed-advanced-spikes pages
+import { GvHomeComponent }   from './app/components/pages/gv-home/gv-home.component';
+// angular-seed-advanced-spikes app modules
+import { MHelloWorldModule } from './app/shared/modules/m-hello-world/m-hello-world.module';
 
 // feature modules
 import { CoreModule } from './app/shared/core/core.module';
@@ -26,15 +30,16 @@ import { AnalyticsModule } from './app/shared/analytics/analytics.module';
 import { MultilingualModule, translateLoaderFactory } from './app/shared/i18n/multilingual.module';
 import { SampleModule } from './app/shared/sample/sample.module';
 
-// app modules
-import { MHelloWorldModule } from './app/shared/modules/m-hello-world/m-hello-world.module';
 
 // intermediate component module
 // helps encapsulate custom native modules in with the components
 // note: couple ways this could be done, just one option presented here...
 @NgModule({
   imports: [
+
+    // angular-seed-advanced-spikes
     MHelloWorldModule.forRoot(),
+
     NativeScriptModule,
     NativeScriptFormsModule,
     NativeScriptHttpModule,
@@ -49,6 +54,8 @@ import { MHelloWorldModule } from './app/shared/modules/m-hello-world/m-hello-wo
     SampleModule
   ],
   declarations: [
+
+    // angular-seed-advanced-spikes
     GvHomeComponent,
 
     AppComponent,
