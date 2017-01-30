@@ -4,16 +4,15 @@ import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 // libs
-import { MultilingualModule } from '../../../frameworks/i18n/multilingual.module';
-import { ConfigService } from 'ng2-config';
+import { MultilingualModule } from '../../../shared/i18n/multilingual.module';
 
 // app
-import { t } from '../../../frameworks/test/index';
-import { ILang, WindowService, ConsoleService } from '../../../frameworks/core/index';
-import { CoreModule } from '../../../frameworks/core/core.module';
+import { t } from '../../../shared/test/index';
+import { ILang, WindowService, ConsoleService } from '../../../shared/core/index';
+import { CoreModule } from '../../../shared/core/core.module';
 
 // mocks
-import { ConfigMock } from '../../../frameworks/core/testing/mocks/ng2-config.mock';
+import { ConfigMock } from '../../../shared/core/testing/mocks/ng2-config.mock';
 
 // modules & components
 import { GvHomeComponent } from './gv-home.component';
@@ -25,7 +24,6 @@ const testModuleConfig = () => {
       CoreModule.forRoot([
         { provide: WindowService, useValue: window },
         { provide: ConsoleService, useValue: console },
-        { provide: ConfigService, useClass: ConfigMock },
       ]),
       RouterTestingModule,
       MultilingualModule],

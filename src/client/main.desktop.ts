@@ -13,7 +13,7 @@ let template: any;
 let menu: any;
 
 // app
-import { DesktopConfig } from './app/frameworks/electron/index';
+import { DesktopConfig } from './app/shared/electron/index';
 
 // Sample
 // You would need a valid `submitURL` to use
@@ -29,9 +29,9 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 app.on('window-all-closed', () => {
-//  if (process.platform !== 'darwin') {
+  if (process.platform !== 'darwin') {
     app.quit();
-//  }
+  }
 });
 
 app.on('ready', () => {

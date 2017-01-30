@@ -1,7 +1,12 @@
-import { Injector } from '@angular/core';
-import { BaseComponent, Config, RouterExtensions } from '../../../frameworks/core/index';
+// libs
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
 
-@BaseComponent({
+import { Injector } from '@angular/core';
+import { Config, RouterExtensions } from '../../../shared/core/index';
+
+@Component({
   moduleId: module.id,
   selector: 'gv-home',
   templateUrl: 'gv-home.component.html',
