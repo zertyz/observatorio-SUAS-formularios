@@ -30,7 +30,6 @@ import { AnalyticsModule } from './app/shared/analytics/analytics.module';
 import { MultilingualModule, translateLoaderFactory } from './app/shared/i18n/multilingual.module';
 import { SampleModule } from './app/shared/sample/sample.module';
 
-
 // intermediate component module
 // helps encapsulate custom native modules in with the components
 // note: couple ways this could be done, just one option presented here...

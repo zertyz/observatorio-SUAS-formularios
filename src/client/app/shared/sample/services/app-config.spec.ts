@@ -10,8 +10,8 @@ export function main() {
       t.e(AppConfig.SUPPORTED_LANGUAGES[1].code).toBe('es');
       t.e(AppConfig.SUPPORTED_LANGUAGES[2].code).toBe('fr');
       t.e(AppConfig.SUPPORTED_LANGUAGES[3].code).toBe('ru');
-      t.e(AppConfig.SUPPORTED_LANGUAGES[4].code).toBe('pt');
-      t.e(AppConfig.SUPPORTED_LANGUAGES[5].code).toBe('bg');
+      t.e(AppConfig.SUPPORTED_LANGUAGES[4].code).toBe('bg');
+      t.e(AppConfig.SUPPORTED_LANGUAGES[5].code).toBe('pt');
     });
   });
 }
