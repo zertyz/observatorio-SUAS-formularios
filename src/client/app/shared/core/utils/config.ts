@@ -75,21 +75,4 @@ export class Config {
       Config.DEBUG[key] = false;
     }
   }
-
-  public static IS_DEBUG_MODE(): boolean {
-    for (let key in Config.DEBUG) {
-      if (Config.DEBUG[key]) {
-        // if any level is on, debug mode is on
-        return true;
-      }
-    }
-    return false;
-  }
-
-  // reset debug defaults
-  public static RESET() {
-    for (let key in Config.DEBUG) {
-      Config.DEBUG[key] = false;
-    }
-  }
 }
