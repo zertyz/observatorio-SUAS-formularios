@@ -11,6 +11,12 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { TranslateLoader } from 'ng2-translate';
 
+// angular-seed-advanced-spikes
+///////////////////////////////
+
+// angular-seed-advanced-spikes app modules
+import { MHelloWorldModule } from './app/shared/modules/m-hello-world/m-hello-world.module';
+
 // bootstrap
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -81,7 +87,7 @@ import {
   TreeModule,
   TreeTableModule,
   TriStateCheckboxModule
-} from 'primeng/primeng'
+} from 'primeng/primeng';
 const PRIMENG_MODULES = [
   AccordionModule,
   AutoCompleteModule,
@@ -156,19 +162,16 @@ import { APP_COMPONENTS, AppComponent } from './app/components/index';
 import { routes } from './app/components/app.routes';
 
 // feature modules
-import { CoreModule } from './app/frameworks/core/core.module';
-import { AppReducer } from './app/frameworks/ngrx/index';
-import { AnalyticsModule } from './app/frameworks/analytics/analytics.module';
-import { MultilingualModule, translateFactory } from './app/frameworks/i18n/multilingual.module';
-import { MultilingualEffects } from './app/frameworks/i18n/index';
-import { SampleModule } from './app/frameworks/sample/sample.module';
-import { NameListEffects } from './app/frameworks/sample/index';
-
-// app modules
-import { MHelloWorldModule } from './app/frameworks/m-hello-world/m-hello-world.module';
+import { CoreModule } from './app/shared/core/core.module';
+import { AppReducer } from './app/shared/ngrx/index';
+import { AnalyticsModule } from './app/shared/analytics/analytics.module';
+import { MultilingualModule, translateLoaderFactory } from './app/shared/i18n/multilingual.module';
+import { MultilingualEffects } from './app/shared/i18n/index';
+import { SampleModule } from './app/shared/sample/sample.module';
+import { NameListEffects } from './app/shared/sample/index';
 
 // config
-import { Config, WindowService, ConsoleService } from './app/frameworks/core/index';
+import { Config, WindowService, ConsoleService } from './app/shared/core/index';
 Config.PLATFORM_TARGET = Config.PLATFORMS.WEB;
 if (String('<%= BUILD_TYPE %>') === 'dev') {
   // only output console logging in dev mode
@@ -176,8 +179,8 @@ if (String('<%= BUILD_TYPE %>') === 'dev') {
 }
 
 // sample config (extra)
-import { AppConfig } from './app/frameworks/sample/services/app-config';
-import { MultilingualService } from './app/frameworks/i18n/services/multilingual.service';
+import { AppConfig } from './app/shared/sample/services/app-config';
+import { MultilingualService } from './app/shared/i18n/services/multilingual.service';
 // custom i18n language support
 MultilingualService.SUPPORTED_LANGUAGES = AppConfig.SUPPORTED_LANGUAGES;
 
@@ -201,9 +204,12 @@ export function cons() {
 
 @NgModule({
   imports: [
+
+    // angular-seed-advanced-spikes
     MHelloWorldModule.forRoot(),
     ...PRIMENG_MODULES,
     NgbModule.forRoot(),
+
     BrowserModule,
     CoreModule.forRoot([
       { provide: WindowService, useFactory: (win) },
@@ -214,7 +220,7 @@ export function cons() {
     MultilingualModule.forRoot([{
       provide: TranslateLoader,
       deps: [Http],
-      useFactory: (translateFactory)
+      useFactory: (translateLoaderFactory)
     }]),
     SampleModule,
     StoreModule.provideStore(AppReducer),
